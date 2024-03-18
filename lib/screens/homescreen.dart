@@ -49,99 +49,59 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ],
             ),
-            const Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            const ExpansionTile(
+              title: Text(
+                "오늘의 할 일",
+                style: TextStyle(
+                  fontSize: 20,
+                ),
+              ),
+              tilePadding: EdgeInsets.zero,
               children: [
-                Expanded(
-                  child: SizedBox(
-                    height: 100,
-                    child: ExpansionTile(
-                      title: Text(
-                        "오늘의 할 일",
-                        style: TextStyle(
-                          fontSize: 20,
-                        ),
-                      ),
-                      tilePadding: EdgeInsets.zero,
-                      children: [
-                        ListTile(
-                          title: Text("asd"),
-                        ),
-                      ],
-                    ),
-                  ),
+                ListTile(
+                  title: Text("asd"),
                 ),
               ],
             ),
-            const Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            const ExpansionTile(
+              title: Text(
+                "일주일 간 해야할 일",
+                style: TextStyle(
+                  fontSize: 20,
+                ),
+              ),
+              tilePadding: EdgeInsets.zero,
               children: [
-                Expanded(
-                  child: SizedBox(
-                    height: 100,
-                    child: ExpansionTile(
-                      title: Text(
-                        "일주일 간 해야할 일",
-                        style: TextStyle(
-                          fontSize: 20,
-                        ),
-                      ),
-                      tilePadding: EdgeInsets.zero,
-                      children: [
-                        ListTile(
-                          title: Text("asd"),
-                        ),
-                      ],
-                    ),
-                  ),
+                ListTile(
+                  title: Text("asd"),
                 ),
               ],
             ),
-            const Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            const ExpansionTile(
+              title: Text(
+                "이번 달의 할 일",
+                style: TextStyle(
+                  fontSize: 20,
+                ),
+              ),
+              tilePadding: EdgeInsets.zero,
               children: [
-                Expanded(
-                  child: SizedBox(
-                    height: 100,
-                    child: ExpansionTile(
-                      title: Text(
-                        "이번 달의 할 일",
-                        style: TextStyle(
-                          fontSize: 20,
-                        ),
-                      ),
-                      tilePadding: EdgeInsets.zero,
-                      children: [
-                        ListTile(
-                          title: Text("asd"),
-                        ),
-                      ],
-                    ),
-                  ),
+                ListTile(
+                  title: Text("asd"),
                 ),
               ],
             ),
-            const Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            const ExpansionTile(
+              title: Text(
+                "지금 할 일",
+                style: TextStyle(
+                  fontSize: 20,
+                ),
+              ),
+              tilePadding: EdgeInsets.zero,
               children: [
-                Expanded(
-                  child: SizedBox(
-                    height: 100,
-                    child: ExpansionTile(
-                      title: Text(
-                        "지금 할 일",
-                        style: TextStyle(
-                          fontSize: 20,
-                        ),
-                      ),
-                      tilePadding: EdgeInsets.zero,
-                      children: [
-                        ListTile(
-                          title: Text("asd"),
-                        ),
-                      ],
-                    ),
-                  ),
+                ListTile(
+                  title: Text("asd"),
                 ),
               ],
             ),

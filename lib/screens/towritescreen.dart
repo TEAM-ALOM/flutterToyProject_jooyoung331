@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart'; //이것까지는 함
 
 class ToWriteScreen extends StatefulWidget {
   const ToWriteScreen({super.key});
@@ -9,6 +10,7 @@ class ToWriteScreen extends StatefulWidget {
 
 class _ToWriteScreenState extends State<ToWriteScreen> {
   DateTime? _selectedDate;
+  var value = "";
   //DateTime _dateTime = DateTime.now();
   @override
   Widget build(BuildContext context) {
@@ -87,6 +89,15 @@ class _ToWriteScreenState extends State<ToWriteScreen> {
                 style: TextStyle(
                   fontSize: 25,
                 ),
+              ),
+              CupertinoTimerPicker(
+                onTimerDurationChanged: (value) {
+                  setState(() {
+                    print(value);
+                  });
+                },
+                mode: CupertinoTimerPickerMode.hm,
+                initialTimerDuration: const Duration(hours: 24, minutes: 60),
               ),
             ],
           ),

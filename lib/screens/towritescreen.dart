@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 //import 'package:flutter/cupertino.dart';
 //import 'package:hive/hive.dart';
 import 'package:hive_flutter/hive_flutter.dart';
+import '../model/task.dart';
 
 class ToWriteScreen extends StatefulWidget {
   const ToWriteScreen({super.key});
@@ -19,7 +20,7 @@ class _ToWriteScreenState extends State<ToWriteScreen> {
   String textContentMemo = "";
   final _controllerTodo = TextEditingController();
   final _controllerTomemo = TextEditingController();
-
+  final box = Hive.box('myBox');
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -44,15 +45,7 @@ class _ToWriteScreenState extends State<ToWriteScreen> {
             },
           ),
           actions: [
-            IconButton(
-              onPressed: () {
-                Navigator.pop(context);
-              },
-              icon: const Icon(
-                Icons.check,
-                size: 25,
-              ),
-            ),
+            checkButton(context),
           ],
         ),
         backgroundColor: const Color.fromARGB(255, 232, 237, 129),
@@ -202,6 +195,57 @@ class _ToWriteScreenState extends State<ToWriteScreen> {
             ),
           ),
         ),
+      ),
+    );
+  }
+
+  IconButton checkButton(BuildContext context) {
+    return IconButton(
+      onPressed: () {
+        if (textContent.isEmpty || textContentMemo.isEmpty) {
+          showDialog(
+            context: context,
+            barrierDismissible: true,
+            builder: (context) {
+              return AlertDialog(
+                content: const Text(
+                  '제목과 내용은 필수 사항입니다.',
+                  textAlign: TextAlign.center,
+                ),
+                actions: [
+                  Center(
+                    child: ElevatedButton(
+                      onPressed: () {
+                        Navigator.of(context).pop();
+                      },
+                      style: ElevatedButton.styleFrom(
+                        minimumSize: const Size.fromHeight(30),
+                      ),
+                      child: const Icon(Icons.check, size: 12),
+                    ),
+                  )
+                ],
+              );
+            },
+          );
+          return;
+        }
+        Navigator.pop(context);
+        Task task = Task(
+          title: textContent,
+          task: textContentMemo,
+          isCompleted: 0,
+          date: _selectedDate.toString().split(" ")[0],
+          startTime: initialTime.toString(),
+          endTime: lateTime.toString(),
+        );
+
+        box.put(task, task);
+        Navigator.pop(context);
+      },
+      icon: const Icon(
+        Icons.check,
+        size: 25,
       ),
     );
   }

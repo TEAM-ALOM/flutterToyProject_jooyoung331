@@ -59,7 +59,7 @@ class _HomeScreenState extends State<HomeScreen> {
               tilePadding: EdgeInsets.zero,
               children: [
                 ListTile(
-                  title: Text("asd"),
+                  title: Text("as"),
                 ),
               ],
             ),
@@ -73,12 +73,12 @@ class _HomeScreenState extends State<HomeScreen> {
               tilePadding: EdgeInsets.zero,
               children: [
                 ListTile(
-                  title: Text("asd"),
+                  title: Text("aa"),
                 ),
               ],
             ),
-            const ExpansionTile(
-              title: Text(
+            ExpansionTile(
+              title: const Text(
                 "이번 달의 할 일",
                 style: TextStyle(
                   fontSize: 20,
@@ -87,7 +87,7 @@ class _HomeScreenState extends State<HomeScreen> {
               tilePadding: EdgeInsets.zero,
               children: [
                 ListTile(
-                  title: Text("asd"),
+                  title: Text("$ToWriteScreen"),
                 ),
               ],
             ),

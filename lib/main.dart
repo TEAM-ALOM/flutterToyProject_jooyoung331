@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:toyproject/model/task.dart';
 import 'package:toyproject/screens/homescreen.dart';
 import 'package:hive_flutter/hive_flutter.dart';
+import 'package:get/get.dart';
+import 'package:hive_flutter/adapters.dart';
 
 void main() async {
   await Hive.initFlutter();
-  //Hive.registerAdapter(TodoAdapter());
+
+  await Hive.openBox('myBox');
   runApp(const App());
 }
 
